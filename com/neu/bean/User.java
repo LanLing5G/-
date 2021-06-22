@@ -3,7 +3,7 @@ package com.neu.bean;
 public abstract class User {
 	
 	private String userNO;
-	private String anme;
+	private String name;
 	private String userPw;
 	private int userType;
 	
@@ -20,16 +20,26 @@ public abstract class User {
 	//构造方法,默认管理员，密码123456
 	public User(String userNo,String name) {
 		this.userNO=userNo;
-		this.anme=name;
+		this.name=name;
 		this.userPw="123456";
 		this.userType=User.USER_TYPE_ADMIN;
 	}
 	
 	
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
 	//构造方法，默认密码，123456.传3 个参数。
 	public User(String userNo,String name,int userType) {
 		this.userNO=userNo;
-		this.anme=name;
+		this.name=name;
 		this.userPw="123456";
 		this.userType=userType;
 	}
@@ -38,7 +48,7 @@ public abstract class User {
 	//构造方法，传4个参数。
 	public User(String userNo,String name,String userPw,int userType) {
 		this.userNO=userNo;
-		this.anme=name;
+		this.name=name;
 		this.userPw=userPw;
 		this.userType=userType;
 	}
@@ -66,7 +76,7 @@ public abstract class User {
 		return userNO;
 	}
 	public String getAnme() {
-		return anme;
+		return name;
 	}
 	
 	
@@ -75,7 +85,7 @@ public abstract class User {
 		this.userNO = userNO;
 	}
 	public void setAnme(String anme) {
-		this.anme = anme;
+		this.name = anme;
 	}
 	public void setUserPw(String userPw) {
 		this.userPw = userPw;

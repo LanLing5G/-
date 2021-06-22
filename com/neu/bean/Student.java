@@ -11,18 +11,23 @@ public class Student extends User{
 	private int age;
 	private String department;
 	
-	//构造方法，所有属性
-	public Student(String userNo, String name, String userPw, int userType) {
-		super(userNo, name, userPw, userType);
+	public Student() {
+		super();
 		// TODO 自动生成的构造函数存根
 	}
+
+	//构造方法，所有属性
 //	public Student(String userNo, String name, String userPw, int userType) {
-//		super(userNo,name,User.USER_TYPE_STUDENT);
-//		this.sex=sex;
-//		this.age=age;
-//		this.department=department;
+//		super(userNo, name, userPw, userType);
 //		// TODO 自动生成的构造函数存根
 //	}
+	public Student(String userNo, String name, String userPw, int userType) {
+		super(userNo,name,User.USER_TYPE_STUDENT);
+		this.sex=sex;
+		this.age=age;
+		this.department=department;
+		// TODO 自动生成的构造函数存根
+	}
 	
 //	
 //	public String getSex() {
@@ -64,7 +69,7 @@ public class Student extends User{
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
 		//学生对象，编号s001,张良，男，21计算机系。
-		Student stu=new Student("s001","张良","男","21");
+		Student stu=new Student("s001","张良","男",21);
 		//打印学生的姓名 编号，年龄。
 		System.out.println(stu.getName()+"-"+stu.getUserNO()+"-"+stu.getAnme());
 	}

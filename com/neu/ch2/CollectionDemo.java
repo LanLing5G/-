@@ -22,7 +22,7 @@ public class CollectionDemo {
 		list.add(t2);
 		//取出
 		for(Teacher t:list) {
-			System.out.println(t.getName());
+			System.out.println(t.getAnme());
 		}
 		
 		
@@ -31,11 +31,11 @@ public class CollectionDemo {
 		map.put(t1.getUserNO(),t1);
 		map.put(t2.getUserNO(),t2);
 		System.out.println("=====================");
-		System.out.println(map.get(t1.getUserNO()).getName());
+		System.out.println(map.get(t1.getUserNO()).getAnme());
 		System.out.println("=====================");
 		//先取出map中的建，通过建取出教师对象
 		for(String key:map.keySet()) {
-			System.out.println(map.get(key).getName());
+			System.out.println(map.get(key).getAnme());
 		}
 	}
 

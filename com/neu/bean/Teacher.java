@@ -18,11 +18,5 @@ public class Teacher extends User {
 		System.out.println(n.getUserNO()+"-"+n.getAnme());
 	}
 
-
-	public char[] getName() {
-		// TODO 自动生成的方法存根
-		return null;
-	}
-
 	
 }
