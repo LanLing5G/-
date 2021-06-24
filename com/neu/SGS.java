@@ -1,13 +1,22 @@
 package com.neu;
-//
+
 import java.util.HashMap;
+
+import com.neu.bean.Student;
+import com.neu.bean.Teacher;
+
+//
+/*import java.util.HashMap;
 import com.neu.bean.Student;
 import com.neu.bean.Teacher;
 import com.sun.java_cup.internal.runtime.Scanner;
 import com.sun.xml.internal.ws.api.ha.StickyFeature;
-
-import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;
+import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;*/
 //
+
+/*
+ * 学生成绩管理系统启动类
+ */
 public class SGS {
 	//所有老师编号。建
 	public static HashMap<String, Student> school;
@@ -18,26 +27,29 @@ public class SGS {
 	public static void init() {
 		//实例化 school
 		school=new HashMap<String,Student>();
+		
 		//定义s001张三,s002李四,s003王五
-//		school.HashaMap<String,Student>("","";"","";"","");
 		Student s001=new Student("s001","张三");
 		Student s002=new Student("s002","李四");
 		Student s003=new Student("s003","王五");
+		
 		//将学生放到school集合中
-		school.put(s001.getUserNO(),s001);
-		school.put(s002.getUserNO(),s002);
-		school.put(s003.getUserNO(),s003);
+		school.put(s001.getUserNo(),s001);
+		school.put(s002.getUserNo(),s002);
+		school.put(s003.getUserNo(),s003);
 		
 		//实例化 faculty
 		faculty=new HashMap<String,Teacher>();
+		
 		//定义 教师对象 t001唐僧,t002孙悟空,t003张三丰
 		Teacher t001=new Teacher("t001","唐僧");
 		Teacher t002=new Teacher("t002","孙悟空");
 		Teacher t003=new Teacher("t003","张三丰");
+		
 		//将教师放到faculty集合中
-		faculty.put(t001.getUserNO(),t001);
-		faculty.put(t002.getUserNO(),t002);
-		faculty.put(t003.getUserNO(),t003);
+		faculty.put(t001.getUserNo(),t001);
+		faculty.put(t002.getUserNo(),t002);
+		faculty.put(t003.getUserNo(),t003);
 		
 	}
 	//
@@ -76,13 +88,14 @@ public class SGS {
 		
 	}
 		//定义login的方法，根据传入的对象，判断学生是否在集合对象SHCOOL中，密码是123456
-	public static void login(String stu) {
-		String userNo=stu.getUserNO();
-		//
+	public static void login(Student stu) {
+		//取出学生编号
+		String userNo=stu.getUserNo();
+		//判断学生是否在school中
 		if(school.get(userNo)!=null) {
 			System.out.println("是，学生在school中");
+			//学生在school中,取出密码
 			String pwd=stu.getUserPw();
-			//
 			if("123456".equals(pwd)) {
 				System.out.println(userNo+"学生密码正确！");
 			}

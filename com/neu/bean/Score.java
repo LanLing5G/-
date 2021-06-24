@@ -2,28 +2,30 @@ package com.neu.bean;
 
 public class Score {
 	//1.studentNo编号		courseNo课程编号	grade成绩	三个私有属性
-	private int grade;
-	private String studentNo,courseNo;
+	private int grade;		//成绩
+	private String studentNo;	//编号	
+	private String courseNo;	//课程编号
 	
 	
 	//2.get/set封装
 	public int getGrade() {
 		return grade;
 	}
-	public void setGrade(int grade) {
-		this.grade = grade;
-	}
 	public String getStudentNo() {
 		return studentNo;
-	}
-	public void setStudentNo(String studentNo) {
-		this.studentNo = studentNo;
 	}
 	public String getCourseNo() {
 		return courseNo;
 	}
+	
+	public void setStudentNo(String studentNo) {
+		this.studentNo = studentNo;
+	}
 	public void setCourseNo(String courseNo) {
 		this.courseNo = courseNo;
+	}
+	public void setGrade(int grade) {
+		this.grade = grade;
 	}
 	
 	
@@ -43,7 +45,6 @@ public class Score {
 	}
 	
 	
-
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
 		//1.studentNo=s001, courseNo=c001, grade=98

@@ -7,60 +7,56 @@ package com.neu.bean;
  *
  */
 public class Student extends User{
-	private String sex;
-	private int age;
-	private String department;
+	private String sex;		//
+	private int age;		//年龄
+	private String department;	//
 	
+	
+	//属性的封装123
 	public Student() {
 		super();
 		// TODO 自动生成的构造函数存根
 	}
-
-	public Student(String userNo, String name, int userType) {
-		super(userNo, name, userType);
-		// TODO 自动生成的构造函数存根
-	}
-
-	//属性的封装
-	public Student(String userNo, String name, String userPw, int userType) {
-		super(userNo,name,User.USER_TYPE_STUDENT);
-		this.sex=userNo;
-		this.age=userType;
-		this.department=userPw;
-		// TODO 自动生成的构造函数存根
-	}
-	
 	public Student(String userNo, String name) {
 		super(userNo, name);
 		// TODO 自动生成的构造函数存根
 	}
+	public Student(String userNo, String name, int userType) {
+		super(userNo, name, userType);
+		// TODO 自动生成的构造函数存根
+	}
+	public Student(String userNo, String name, String userPw, int userType) {
+		// TODO 自动生成的构造函数存根
+	}
+	
+	//1.属性的封装5
+	public Student(String userNo, String name ,String sex, int age,String department) {
+		super(userNo, name, User.USER_TYPE_STUDENT);
+		this.sex=sex;
+		this.age=age;
+		this.department=department;
+		// TODO 自动生成的构造函数存根
+	}
 
+	
 	//2.get/set封装
 	public String getSex() {
 		return sex;
 	}
-
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
-
-	public int getAge() {
-		return age;
-	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-
 	public String getDepartment() {
 		return department;
 	}
-
-
+	public int getAge() {
+		return age;
+	}
+	
+	
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
 	public void setDepartment(String department) {
 		this.department = department;
 	}
@@ -68,12 +64,10 @@ public class Student extends User{
 
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
-		//学生对象，编号s001,张良，男，21计算机系。
-		Student stu=new Student("s001","张良","男",21);
+		//学生对象，编号s001,张良，男，21，计算机系。
+		Student stu=new Student("s001","张良","男",21,"计算机系");
 		//打印学生的姓名 编号，年龄。
-		System.out.println(stu.getName()+"-"+stu.getUserNO()+"-"+stu.getAnme());
+		System.out.println(stu.getName()+"-"+stu.getUserNo()+"-"+stu.getAge());
 	}
-
-
 	
 }
