@@ -11,6 +11,24 @@ public class Teacher extends User {
 	}
 
 	
+	public Teacher() {
+		super();
+		// TODO 自动生成的构造函数存根
+	}
+
+
+	public Teacher(String userNo, String name, String userPw, int userType) {
+		super(userNo, name, userPw, userType);
+		// TODO 自动生成的构造函数存根
+	}
+
+
+	public Teacher(String userNo, String name, int userType) {
+		super(userNo, name, userType);
+		// TODO 自动生成的构造函数存根
+	}
+
+
 	public static void main(String[] args) {
 		//老师，t123,张三丰
 		//打印

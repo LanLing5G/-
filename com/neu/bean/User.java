@@ -2,10 +2,10 @@ package com.neu.bean;
 
 public abstract class User {
 	
-	private String userNO;
-	private String name;
-	private String userPw;
-	private int userType;
+	private String userNO;	//用户
+	private String name;	//
+	private String userPw;	//密码
+	private int userType;	//
 	
 	//定义常量
 	public final static int USER_TYPE_ADMIN=0;
@@ -25,7 +25,7 @@ public abstract class User {
 		this.userType=User.USER_TYPE_ADMIN;
 	}
 	
-	
+
 	public String getName() {
 		return name;
 	}
