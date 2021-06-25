@@ -54,6 +54,9 @@ public class SGS {
 		faculty.put(t003.getUserNo(),t003);
 		
 	}
+	
+	
+	
 	//
 	public static void test() {
 		//1.从集合对象school中取出s0001编号的学生，并打印。
@@ -89,6 +92,9 @@ public class SGS {
 		}
 		
 	}
+	
+	
+	
 		//定义login的方法，根据传入的对象，判断学生是否在集合对象SHCOOL中，密码是123456
 	public static void login(Student stu) {
 		//取出学生编号
@@ -109,6 +115,9 @@ public class SGS {
 			System.out.println("否，学生不在school中");
 		}
 	}
+	
+	
+	
 	
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根

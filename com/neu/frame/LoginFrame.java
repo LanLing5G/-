@@ -126,7 +126,7 @@ public class LoginFrame extends JFrame {
 		this.setLocationRelativeTo(null);
 	}
 	
-	
+
 	
 	//登录方法
 	protected void btnLoiginClick(ActionEvent e) {
@@ -157,7 +157,7 @@ public class LoginFrame extends JFrame {
 			//管理员
 			break;
 		case User.USER_TYPE_TEACHER:
-			//教师
+			//教师.faculty.get(uid);
 			user=SGS.faculty.get(uid);
 			break;
 		case User.USER_TYPE_STUDENT:
