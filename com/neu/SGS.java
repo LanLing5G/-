@@ -1,9 +1,11 @@
 package com.neu;
 
+import java.awt.EventQueue;
 import java.util.HashMap;
 
 import com.neu.bean.Student;
 import com.neu.bean.Teacher;
+import com.neu.frame.LoginFrame;
 
 //
 /*import java.util.HashMap;
@@ -111,10 +113,16 @@ public class SGS {
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
 		init();
-		test();
-		//调用login，先创建学生对象。
-		Student stu=new Student("s004","张三");
-		login(stu);
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LoginFrame frame = new LoginFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 }
