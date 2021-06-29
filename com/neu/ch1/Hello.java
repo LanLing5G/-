@@ -1,5 +1,9 @@
 package com.neu.ch1;
-
+/**
+ * 
+ * @author tydd
+ *
+ */
 public class Hello {
 
 	public static void main(String[] args) {

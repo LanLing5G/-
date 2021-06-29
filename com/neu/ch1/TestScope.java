@@ -1,5 +1,9 @@
 package com.neu.ch1;
-
+/**
+ * 
+ * @author tydd
+ *
+ */
 public class TestScope {
 
 	public static void main(String[] args) {

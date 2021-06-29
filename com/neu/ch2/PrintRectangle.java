@@ -1,7 +1,9 @@
 package com.neu.ch2;
-
-
-
+/**
+ * 创建类，引用类--编程习惯练习
+ * @author tydd
+ *
+ */
 public class PrintRectangle {
 	
 	public static void drawRectangle(int x,int y) {

@@ -7,18 +7,20 @@ import com.neu.bean.Student;
 import com.neu.bean.Teacher;
 import com.neu.frame.LoginFrame;
 
-//
+
 /*import java.util.HashMap;
 import com.neu.bean.Student;
 import com.neu.bean.Teacher;
 import com.sun.java_cup.internal.runtime.Scanner;
 import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;*/
-//
 
-/*
+/**
  * 学生成绩管理系统启动类
+ * @author tydd
+ *
  */
+
 public class SGS {
 	//所有老师编号。建
 	public static HashMap<String, Student> school;

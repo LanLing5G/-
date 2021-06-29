@@ -1,18 +1,23 @@
 package com.neu.bean;
 /**
+ * 1.继承User
+ * 构造函数
+ * 
+ * 2.定义内部变量-
  * 性别 sex
  * 年龄 age
  * 系 department
+ * 3.get/set封装
  * @author Lenovo
  *
  */
 public class Student extends User{
-	private String sex;		//
+	private String sex;		//性别
 	private int age;		//年龄
-	private String department;	//
+	private String department;	//系部
 	
 	
-	//属性的封装123
+	//属性的封装1234
 	public Student() {
 		super();
 		// TODO 自动生成的构造函数存根

@@ -1,6 +1,6 @@
 package com.neu.frame;
 
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -21,18 +21,23 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.awt.event.ActionEvent;
+
 /**
- * 登陆界面
- * @author Lenovo
+ * 图形界面--登陆界面
+ * @author tydd
  *
  */
+/*？不致命错误*/
+@SuppressWarnings("serial")
 public class LoginFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtUserNo;
 	private JPasswordField txtPwd;
+/*？不致命错误*/
+	@SuppressWarnings("rawtypes")
 	private JComboBox cbType;
 
 	/**
@@ -54,6 +59,8 @@ public class LoginFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+/*？不致命错误*/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public LoginFrame() {
 		setResizable(false);
 		setTitle("登录");
@@ -124,7 +131,8 @@ public class LoginFrame extends JFrame {
 		panel_4.add(btnExit);
 		this.setLocationRelativeTo(null);
 	}
-
+/*？不致命错误*/
+	@SuppressWarnings("deprecation")
 	protected void btnLoginClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
 		String uid=txtUserNo.getText();

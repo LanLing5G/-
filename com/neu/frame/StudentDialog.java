@@ -20,10 +20,12 @@ import java.util.HashMap;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
- * 学生信息表
- * @author Lenovo
+ * 图形界面--学生信息表
+ * @author tydd
  *
  */
+/*？不致命错误*/
+@SuppressWarnings("serial")
 public class StudentDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -203,7 +205,7 @@ public class StudentDialog extends JDialog {
 		
 	}
 
-/////////////////////////////
+//更新数据///////////////////////////
 	private void getStudents() {
 		tm=new DefaultTableModel(
 				new Object[][] {

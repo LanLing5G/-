@@ -23,14 +23,20 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
- * 添加数据
+ * 图形界面--添加数据
+ * @author tydd
+ * 
  */
+/*？不致命错误*/
+@SuppressWarnings("serial")
 public class StudentSaveDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtUserNo;
 	private JTextField txtName;
 	private JTextField txtAge;
+/*？不致命错误*/
+	@SuppressWarnings("rawtypes")
 	private JComboBox cbDept;
 	private JRadioButton rdM;
 	private JRadioButton rdF;
@@ -51,10 +57,12 @@ public class StudentSaveDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+/*？不致命错误*/
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public StudentSaveDialog() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setResizable(false);
-		setTitle("更新学生");
+		setTitle("添加学生");
 		setBounds(100, 100, 562, 585);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

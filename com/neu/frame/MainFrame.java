@@ -20,10 +20,12 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
- * 菜单 主页
- * @author Lenovo
+ * 图形界面--主页-菜单 
+ * @author tydd
  *
  */
+/*？不致命错误*/
+@SuppressWarnings({ "serial", "unused" })
 public class MainFrame extends JFrame {
 
 	private JPanel contentPane;
@@ -49,7 +51,7 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() {
 		
-		setTitle("主窗体");
+		setTitle("学生成绩管理系统");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 787, 552);
 		

@@ -16,7 +16,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-
+/**
+ * GUI编程--图形界面--实验
+ * @author tydd
+ *
+ */
+@SuppressWarnings("serial")
 public class MyFrame extends JFrame {
 	
 	public MyFrame () {
@@ -80,12 +85,16 @@ public class MyFrame extends JFrame {
 				// TODO 自动生成的方法存根
 				//txt.setText("程序写入信息");
 				//接受文本框信息
+/*？修饰不致命错误*/
+				@SuppressWarnings("unused")
 				String str=txt.getText();
 				//获取下拉列表信息
 				String strCb=(String) cd.getSelectedItem();
 				int index=cd.getSelectedIndex();
 				
 				//按钮
+/*？修饰不致命错误*/
+				@SuppressWarnings("unused")
 				String sex=null;
 				if(rb1.isSelected()) {
 					sex=rb1.getText();

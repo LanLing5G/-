@@ -24,16 +24,20 @@ import com.neu.bean.Student;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
- * 更新数据
- * @author Lenovo
+ * 图形界面--更新数据
+ * @author tydd
  *
  */
+/*？修饰不致命错误*/
+@SuppressWarnings({ "unused", "serial" })
 public class StudentUpdateDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtUserNo;
 	private JTextField txtName;
 	private JTextField txtAge;
+/*？修饰不致命错误*/
+	@SuppressWarnings("rawtypes")
 	private JComboBox cbDept;
 	private JRadioButton rdM;
 	private JRadioButton rdF;
@@ -71,10 +75,12 @@ public class StudentUpdateDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+/*？修饰不致命错误*/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public StudentUpdateDialog() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setResizable(false);
-		setTitle("添加学生");
+		setTitle("更新学生");
 		setBounds(100, 100, 562, 585);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

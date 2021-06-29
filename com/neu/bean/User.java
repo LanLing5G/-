@@ -1,9 +1,19 @@
 package com.neu.bean;
+/**
+ * 1.定义抽象类，
+ * 2.2.定义内部变量-
+ * 用户userNo
+ * 名称name
+ * 密码userPw
+ * userType
+ * @author tydd
+ *
+ */
 
 public abstract class User {
 	
 	private String userNo;	//用户id
-	private String name;	///编号
+	private String name;	///名称
 	private String userPw;	//密码
 	private int userType;	//
 	
@@ -13,8 +23,11 @@ public abstract class User {
 	public final static int USER_TYPE_STUDENT=2;
 	
 	
+	
+	
 	//默认构造函数
 	public User() {	}
+	
 	//构造方法,默认管理员，密码123456.传2个参数.
 	public User(String userNo,String name) {
 		this.userNo=userNo;
@@ -22,21 +35,25 @@ public abstract class User {
 		this.userPw="123456";
 		this.userType=User.USER_TYPE_ADMIN;
 	}
+	
 	//构造方法，默认密码，123456.传3 个参数。
-		public User(String userNo,String name,int userType) {
-			this.userNo=userNo;
-			this.name=name;
-			this.userPw="123456";
-			this.userType=userType;
-		}
-		//构造方法，传4个参数。
-		public User(String userNo,String name,String userPw,int userType) {
-			this.userNo=userNo;
-			this.name=name;
-			this.userPw=userPw;
-			this.userType=userType;
-		}
+	public User(String userNo,String name,int userType) {
+		this.userNo=userNo;
+		this.name=name;
+		this.userPw="123456";
+		this.userType=userType;
+	}
 		
+	//构造方法，传4个参数。
+	public User(String userNo,String name,String userPw,int userType) {
+		this.userNo=userNo;
+		this.name=name;
+		this.userPw=userPw;
+		this.userType=userType;
+	}
+		
+	
+	
 		
 	public String getName() {
 		return name;
@@ -47,8 +64,8 @@ public abstract class User {
 	public String getUserNo() {
 		return userNo;
 	}
-	public String getAnme() {
-		return name;
+	public int getUserType() {
+		return userType;
 	}
 	
 	
@@ -62,10 +79,6 @@ public abstract class User {
 		return USER_TYPE_STUDENT;
 	}
 	
-	
-	public int getUserType() {
-		return userType;
-	}
 	
 	
 	public void setUserNo(String userNO) {

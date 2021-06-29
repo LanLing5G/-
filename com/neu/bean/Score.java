@@ -1,4 +1,15 @@
 package com.neu.bean;
+/**
+ * 1.定义内部变量-
+ * 编号studentNo		
+ * 课程编号courseNo	
+ * 成绩grade
+ * 2.get/set封装
+ * 3.属性的封装(构造函数)
+ * 
+ * @author tydd
+ *
+ */
 
 public class Score {
 	//1.studentNo编号		courseNo课程编号	grade成绩	三个私有属性
