@@ -3,14 +3,27 @@ package com.neu.frame;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.SwingConstants;
-
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.SystemColor;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+/**
+ * 菜单 主页
+ * @author Lenovo
+ *
+ */
 public class MainFrame extends JFrame {
 
 	private JPanel contentPane;
@@ -35,25 +48,66 @@ public class MainFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public MainFrame() {
+		
 		setTitle("主窗体");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 787, 552);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnUser = new JMenu("用户管理");
+		mnUser.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+		menuBar.add(mnUser);
+		
+		JMenuItem mnStundent = new JMenuItem("学生管理");
+		mnStundent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+///////////////////////				
+				  mnStundentClick(e);
+			}
+		});
+		mnStundent.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+		mnUser.add(mnStundent);
+		
+		JMenuItem mnTeacher = new JMenuItem("教师管理");
+		mnTeacher.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+		mnUser.add(mnTeacher);
+		
+		JMenu mnScore = new JMenu("成绩管理");
+		mnScore.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+		menuBar.add(mnScore);
+		
+		JMenu mnClass = new JMenu("开课目录管理");
+		mnClass.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+		menuBar.add(mnClass);
+		
+		JMenu mnServer = new JMenu("服务器管理");
+		mnServer.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+		menuBar.add(mnServer);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.CYAN);
-		contentPane.setToolTipText("");
+		contentPane.setBackground(Color.PINK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JLabel lblNewLabel = new JLabel("学生成绩管理系统");
+		JLabel lblNewLabel = new JLabel("学习成绩管理系统");
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setBackground(SystemColor.window);
+		lblNewLabel.setFont(new Font("隶书", Font.PLAIN, 70));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setBackground(Color.GREEN);
-		lblNewLabel.setFont(new Font("楷体", Font.PLAIN, 42));
-		lblNewLabel.setToolTipText("");
 		contentPane.add(lblNewLabel, BorderLayout.CENTER);
-		//
-		this.setLocationRelativeTo(null);
+		//this.setLocationRelativeTo(null);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		
+	}
+	
+//显示学生信息表////////////////////////
+	protected void mnStundentClick(ActionEvent e) {
+		// TODO 自动生成的方法存根
+			StudentDialog dialog = new StudentDialog();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
 	}
 
 }
