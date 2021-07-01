@@ -7,20 +7,22 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.neu.SGS;
+import com.neu.bean.Teacher;
+
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.Window.Type;
-/**
- * 图形界面--教师管理--添加信息
- * @author Lenovo
- *
- */
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class TeacherSaveDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtUserNo;
+	private JTextField txtName;
 
 	/**
 	 * Launch the application.
@@ -39,9 +41,7 @@ public class TeacherSaveDialog extends JDialog {
 	 * Create the dialog.
 	 */
 	public TeacherSaveDialog() {
-		setTitle("添加学生");
-		setType(Type.UTILITY);
-		setResizable(false);
+		setTitle("添加教师");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -51,26 +51,30 @@ public class TeacherSaveDialog extends JDialog {
 			JPanel panel = new JPanel();
 			contentPanel.add(panel);
 			{
-				JLabel lblNewLabel = new JLabel("New label");
+				JLabel lblNewLabel = new JLabel("教师编号：");
+				lblNewLabel.setFont(new Font("宋体", Font.PLAIN, 24));
 				panel.add(lblNewLabel);
 			}
 			{
-				textField = new JTextField();
-				panel.add(textField);
-				textField.setColumns(10);
+				txtUserNo = new JTextField();
+				txtUserNo.setFont(new Font("宋体", Font.PLAIN, 24));
+				panel.add(txtUserNo);
+				txtUserNo.setColumns(10);
 			}
 		}
 		{
 			JPanel panel = new JPanel();
 			contentPanel.add(panel);
 			{
-				JLabel lblNewLabel_1 = new JLabel("New label");
+				JLabel lblNewLabel_1 = new JLabel("教师姓名：");
+				lblNewLabel_1.setFont(new Font("宋体", Font.PLAIN, 24));
 				panel.add(lblNewLabel_1);
 			}
 			{
-				textField_1 = new JTextField();
-				panel.add(textField_1);
-				textField_1.setColumns(10);
+				txtName = new JTextField();
+				txtName.setFont(new Font("宋体", Font.PLAIN, 24));
+				panel.add(txtName);
+				txtName.setColumns(10);
 			}
 		}
 		{
@@ -78,17 +82,33 @@ public class TeacherSaveDialog extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.CENTER));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("OK");
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+				JButton btnSave = new JButton("保存");
+				btnSave.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+//////////////////////////
+						btnSaveClick(e);
+					}
+				});
+				btnSave.setActionCommand("OK");
+				buttonPane.add(btnSave);
+				getRootPane().setDefaultButton(btnSave);
 			}
 			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+				JButton btnCancel = new JButton("取消");
+				btnCancel.setActionCommand("Cancel");
+				buttonPane.add(btnCancel);
 			}
 		}
+	}
+
+/////////	
+	protected void btnSaveClick(ActionEvent e) {
+		// TODO 自动生成的方法存根
+		String userNo=txtUserNo.getText();
+		String name=txtName.getText();
+		Teacher tea=new Teacher(userNo,name);
+		SGS.faculty.put(userNo, tea);
+		this.dispose();
 	}
 
 }

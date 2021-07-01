@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Window.Type;
@@ -143,12 +144,21 @@ private DefaultTableModel tm;
 	}
 
 	
-//添加教师信息////////////////
+//删除/////////////////
 	protected void btnNewButtonClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
-		TeacherSaveDialog dialog = new TeacherSaveDialog();
-		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		dialog.setVisible(true);
+		int row=table.getSelectedRow();
+		if(row<0) {
+			JOptionPane.showMessageDialog(null, "请选择行！");
+			return;
+		}
+		int flag=JOptionPane.showConfirmDialog(this, "是否删除数据？","警告",JOptionPane.YES_NO_OPTION);
+		if (JOptionPane.YES_OPTION==flag) {
+			String userNo=(String) tm.getValueAt(row, 0);
+			SGS.school.remove(userNo);
+			tm.removeRow(row);
+			table.updateUI();
+		}
 		
 		//更新数据
 		getTeachers();
@@ -157,13 +167,36 @@ private DefaultTableModel tm;
 //修改教师信息/////////////////
 	protected void cancelButtonClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
+		int row=table.getSelectedRow();
+		if (row<0) {
+			JOptionPane.showMessageDialog(null, "请选择行！");
+			return;
+		}
+		String userNo=(String) tm.getValueAt(row,0);
+		String name=(String) tm.getValueAt(row, 1);
+		Teacher tea =new Teacher(userNo, name);
+		
+		TeacherUpdateDialog dialog = new TeacherUpdateDialog();
+		//
+		dialog.setModal(true);
+		dialog.setLocationRelativeTo(null);
+		
+		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		dialog.setVisible(true);
+		
 		//更新数据
 		getTeachers();
 	}
 
-//删除/////////////////
+//添加教师信息////////////////
 	protected void okButtonClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
+		TeacherSaveDialog dialog = new TeacherSaveDialog();
+		dialog.setModal(true);
+		dialog.setLocationRelativeTo(null);
+		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		dialog.setVisible(true);
+		
 		getTeachers();
 	}
 
