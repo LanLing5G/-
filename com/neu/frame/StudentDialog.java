@@ -30,7 +30,8 @@ public class StudentDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
-	private DefaultTableModel tm;//表格数据模型
+/////表格数据模型
+	private DefaultTableModel tm;
 
 	/**
 	 * Launch the application.
@@ -50,6 +51,7 @@ public class StudentDialog extends JDialog {
 	 */
 	public StudentDialog() {
 		setTitle("学生管理");
+//////////
 		this.setSize(800,600);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
@@ -65,7 +67,7 @@ public class StudentDialog extends JDialog {
 			contentPanel.add(scrollPane, BorderLayout.CENTER);
 			{
 				table = new JTable();
-				
+///////////////////
 				getStudents();
 				
 				
@@ -205,7 +207,7 @@ public class StudentDialog extends JDialog {
 		
 	}
 
-//更新数据///////////////////////////
+//刷新数据///////////////////////////
 	private void getStudents() {
 		tm=new DefaultTableModel(
 				new Object[][] {

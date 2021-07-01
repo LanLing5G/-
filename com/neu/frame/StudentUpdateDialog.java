@@ -208,7 +208,8 @@ public class StudentUpdateDialog extends JDialog {
 			}
 		}
 	}
-
+	
+///////////////
 	protected void btnSaveClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
 		String userNo=txtUserNo.getText();

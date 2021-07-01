@@ -7,6 +7,9 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import sun.awt.windows.WWindowPeer;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -73,6 +76,12 @@ public class MainFrame extends JFrame {
 		mnUser.add(mnStundent);
 		
 		JMenuItem mnTeacher = new JMenuItem("教师管理");
+		mnTeacher.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+////////////////////
+				mnTeacherClick(e);
+			}
+		});
 		mnTeacher.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
 		mnUser.add(mnTeacher);
 		
@@ -104,6 +113,15 @@ public class MainFrame extends JFrame {
 		
 	}
 	
+	
+//显示教师信息表///////////////////////
+	protected void mnTeacherClick(ActionEvent e) {
+		// TODO 自动生成的方法存根
+	TeacherDialog dialog = new TeacherDialog();
+	dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+	dialog.setVisible(true);
+	}
+
 //显示学生信息表////////////////////////
 	protected void mnStundentClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
