@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
  * @author Lenovo
  *
  */
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial", "unused" })
 public class TeacherUpdateDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -123,7 +123,6 @@ public class TeacherUpdateDialog extends JDialog {
 		//信息添加到表中
 		Teacher stu=new Teacher(userNo, name);
 		SGS.faculty.put(userNo, stu);
-		//put(userNo, stu);
 		//关闭窗体
 		this.dispose();
 	}

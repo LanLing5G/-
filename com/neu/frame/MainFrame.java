@@ -93,6 +93,12 @@ public class MainFrame extends JFrame {
 		mnClass.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
 		menuBar.add(mnClass);
 		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("课程管理");
+		mnClass.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+		mnClass.add(mntmNewMenuItem);
+		
 		JMenu mnServer = new JMenu("服务器管理");
 		mnServer.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
 		menuBar.add(mnServer);
