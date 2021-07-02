@@ -89,6 +89,12 @@ public class MainFrame extends JFrame {
 		mnScore.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
 		menuBar.add(mnScore);
 		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("成绩录入");
+		mnScore.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("成绩查询");
+		mnScore.add(mntmNewMenuItem_3);
+		
 		JMenu mnClass = new JMenu("开课目录管理");
 		mnClass.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
 		menuBar.add(mnClass);
@@ -102,6 +108,12 @@ public class MainFrame extends JFrame {
 		JMenu mnServer = new JMenu("服务器管理");
 		mnServer.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
 		menuBar.add(mnServer);
+		
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("服务器启动");
+		mnServer.add(mntmNewMenuItem_4);
+		
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem("服务器关闭");
+		mnServer.add(mntmNewMenuItem_5);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.PINK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
