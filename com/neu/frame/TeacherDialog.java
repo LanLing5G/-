@@ -24,10 +24,11 @@ import java.util.HashMap;
 import java.awt.event.ActionEvent;
 
 /**
- * 图形界面--教师信息表
+ * 图形界面--教师信息表--
  * @author Lenovo
  *
  */
+@SuppressWarnings({ "unused", "serial" })
 public class TeacherDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -155,7 +156,7 @@ private DefaultTableModel tm;
 		int flag=JOptionPane.showConfirmDialog(this, "是否删除数据？","警告",JOptionPane.YES_NO_OPTION);
 		if (JOptionPane.YES_OPTION==flag) {
 			String userNo=(String) tm.getValueAt(row, 0);
-			SGS.school.remove(userNo);
+			SGS.faculty.remove(userNo);
 			tm.removeRow(row);
 			table.updateUI();
 		}
@@ -172,19 +173,21 @@ private DefaultTableModel tm;
 			JOptionPane.showMessageDialog(null, "请选择行！");
 			return;
 		}
+		
 		String userNo=(String) tm.getValueAt(row,0);
 		String name=(String) tm.getValueAt(row, 1);
 		Teacher tea =new Teacher(userNo, name);
 		
 		TeacherUpdateDialog dialog = new TeacherUpdateDialog();
-		//
+		
+		dialog.initDate(tea);
+		
 		dialog.setModal(true);
 		dialog.setLocationRelativeTo(null);
 		
 		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		dialog.setVisible(true);
 		
-		//更新数据
 		getTeachers();
 	}
 
@@ -200,6 +203,5 @@ private DefaultTableModel tm;
 		getTeachers();
 	}
 
-	
 
 }

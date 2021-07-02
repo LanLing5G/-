@@ -16,7 +16,7 @@ import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;*/
 
 /**
- * 学生成绩管理系统启动类
+ * 学生成绩管理系统--启动类
  * @author tydd
  *
  */

@@ -209,7 +209,7 @@ public class StudentUpdateDialog extends JDialog {
 		}
 	}
 	
-///////////////
+//保存更新内容/////////////
 	protected void btnSaveClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
 		String userNo=txtUserNo.getText();

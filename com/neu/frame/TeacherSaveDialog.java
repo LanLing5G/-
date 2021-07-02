@@ -17,7 +17,12 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * 图形界面--教师管理--添加信息
+ * @author Lenovo
+ *
+ */
+@SuppressWarnings("serial")
 public class TeacherSaveDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -100,8 +105,9 @@ public class TeacherSaveDialog extends JDialog {
 			}
 		}
 	}
+	
 
-/////////	
+//保存添加信息///////	
 	protected void btnSaveClick(ActionEvent e) {
 		// TODO 自动生成的方法存根
 		String userNo=txtUserNo.getText();

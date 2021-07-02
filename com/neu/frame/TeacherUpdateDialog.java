@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.neu.SGS;
+import com.neu.bean.Student;
 import com.neu.bean.Teacher;
 
 import java.awt.GridLayout;
@@ -17,7 +18,12 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * 图形界面--教师管理--修改信息
+ * @author Lenovo
+ *
+ */
+@SuppressWarnings("serial")
 public class TeacherUpdateDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -108,16 +114,17 @@ public class TeacherUpdateDialog extends JDialog {
 		}
 	}
 
-////////////////
+	
+//保存修改信息//////////////
 	protected void btnSaveClick(ActionEvent e) {
-		// TODO 自动生成的方法存根
-		
+		// TODO 自动生成的方法存根	
 		String userNo=txtUserNo.getText();
 		String name=txtName.getText();
-		
-		Teacher tea=new Teacher(userNo,name);
-		SGS.faculty.put(userNo, tea);
-		
+		//信息添加到表中
+		Teacher stu=new Teacher(userNo, name);
+		SGS.faculty.put(userNo, stu);
+		//put(userNo, stu);
+		//关闭窗体
 		this.dispose();
 	}
 
